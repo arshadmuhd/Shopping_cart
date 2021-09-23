@@ -1,0 +1,89 @@
+
+
+   <section class="header-section" >
+     
+        <div class="row">
+            <div class="col-lg-12">
+                <!----------------navbar---------------->
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="/"><img style=" height: 4rem;" src="https://previews.dropbox.com/p/thumb/ABT3ptdQXmv72l0rUyX-h46_O6XIH6VPxmj5FuSMs3QA5UI5PYcuIj18lPP2KzjngZo09cSN_BHgzoFs3ExMjqQsWYGHWTHnqDpCee0XR318cFjnk68PtYyBytT0EpctrY4YknvgPWNZk9z9pAyOvd6q5UMjjfC9c7GtgxmrxmJdH7ikJkk-C2xyRNIGwxppY1ysmxcMPw9UyvGscG1YQNqJAMhi3uSjSOzvEqM1F5WGj9OU4OZ0YTESwYkhrQ06MExXhU4EekYQGCXoGX09ZvK4wPIojCF5y6LUZ8ZjA3XCy56ofqxR4-NEuYaj8ibLVouQEgREAbI7XWSXHUgDrxVESZ88PJe_0CQepP-6NLkkAQ/p.png?fv_content=true&size_mode=5" alt="" class="src"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
+                      <ul class="navbar-nav ml-auto mt-2 mt-lg-0 ">
+                        <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+                        <li class="nav-item pl-2 pr-1 pt-2 active">
+                          <a class="nav-link text-uppercase text-dark" href="#products">Products <span class="sr-only">(current)</span></a>
+                        </li>
+                                          
+                        {{#if user}}
+                        <li class="nav-item  pl-2 pr-2 pt-2 active ">
+                            <a class="nav-link text-uppercase text-dark" href="/orders">Orders</a>
+                          </li>
+                        {{/if}}
+                          <li class="nav-item  pl-2 pt-2 active">
+                            <a class="nav-link text-uppercase text-dark" href="#contact">Contact</a>
+                          </li>
+                        
+                        <li class="nav-item  pl-2 pr-1 active">
+                          <a class="nav-link text-uppercase text-dark" href="/cart">{{#if user}}<span style="
+    position: absolute;
+    top:10px;
+    text-align: center;
+    border-radius: 50px 50px 50px 50px;
+    padding:5px 10px;
+    background-color:transparent;
+    font-weight: bolder;
+    
+    font-size:21px;" class="badge badge-success text-dark" id="cart-count">{{cartCount}}</span>{{/if}}<img style=" height: 2rem;" src="https://previews.dropbox.com/p/thumb/ABSY3g8M181THNUEfcn8TuBjIagqbLzu4V_8rdMs03eafxhZ7rz-ZQtWi8T-AtG9F4Ja8KV4u3ZilaPE-7udbsySwStC_YFEkwXkKEPa3HmGgNj6DT-fN7yyLpypiEsVe5i8VkS_qcF5wZ9ROXkh0CKmnDmKL8OVTb4xSAPBoT1iieloDOdtq73X8MyqyhNpAj5j0Lyi9l4_d62_nTvcv9mcuBfyMPxI3z67hqPit7Co2yStqVcKksZLY002PFYr2Hr1GP8QV5YEetPw0U9QmsYnoCZ1Ty5Lyj1jxp-WHxqJSaBTx8xqhWCOsFqtg3-nkC8ZWihtWeEJMfk9cIK5MqqRCsxeDWadm2bJwVyS9Gu3WA/p.png?fv_content=true&size_mode=5" alt="" class="src" ></a>
+                        </li>
+                        
+                        
+                        
+                      </ul>
+                      <div class="dropdown">
+                           <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{#if user}}
+                               {{user.Lname}}
+                               {{else}}
+                                 Account
+
+                            {{/if}}
+                             
+                            </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          {{#if user}}
+                               <a class="dropdown-item  text-primary " href="/logout">LOGOUT</a>
+                               {{else}}
+                                 <a class="dropdown-item  text-primary " href="/login">LOGIN</a>
+
+                            {{/if}}
+                            
+                           
+                        </div>
+                      </div>
+                      
+                      
+                    </div>
+                  </nav>
+            </div>
+        </div>
+      
+
+
+
+      
+
+    </section>
+      
+  
+
+    
+
+    

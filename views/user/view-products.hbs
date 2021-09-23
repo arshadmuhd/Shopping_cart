@@ -1,0 +1,132 @@
+<style>
+      hr {
+         width: 67rem;
+        height: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+
+<!-- banner section -->
+<section>
+<div id="carouselExampleControls" class="carousel slide " data-ride="carousel" >
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100 img-fluid" style="width:100%; height: 17rem;" src="https://img.staticbg.com/deals/edm/topic/0_Picture_Style/collection-9343/pc/banner-up.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" style="width:100%; height: 17rem;" src="https://alertify.eu/wp-content/uploads/2020/08/top-tech-companies.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" style="width:100%; height: 17rem;" src="https://i.pinimg.com/originals/57/48/de/5748de0245ef4f31d8bae0d0b95d227f.jpg" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" style="width:100%; height: 17rem;" src="https://ultron.co.in/wp-content/uploads/2021/07/cooker-banner.jpg" alt="Fourth slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" style="width:100%; height: 17rem;" src="https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-taobao-e-commerce-appliances-promotion-poster-banner-image_155307.jpg" alt="Fifth slide">
+    </div>
+     <div class="carousel-item">
+      <img class="d-block w-100" style="width:100%; height: 17rem;" src="https://images-eu.ssl-images-amazon.com/images/G/31/img18/Shoes/Feb/FormalShoes/PC/1099419_Shoes_fest_1024x400_header_2._CB502784925_.jpg" alt="Sixth slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</section>
+
+ <!--iphone section !-->
+
+<section class="pt-1 ">
+    <div class="cards col-md-12 mr-auto ml-auto ">
+       
+        <div class="common-heading ">
+            <div class="common-heading-left ">
+             <h1>Purchase Your Favourite Products</h1>
+             <h2> All Branded Products Are Available</h2>
+            </div>
+            <div class="common-heading-right">
+              <button>view all</button>
+            </div>
+        </div>
+
+        <div class="row">
+        {{#each products}}
+         <div class="col-md-2 p-3">
+         
+            <div class="common-col ">
+             
+              
+                  <img style="width: 8rem;" src="/product-images/{{this._id}}.jpg" alt="mobile">
+                <h3>{{this.Name}}</h3>
+                <h4>{{this.Category}}</h4>
+                <h6>Now@ <i class="fas fa-rupee-sign"></i>${{this.Price}}</h6>
+                <!--<a href="/add-to-cart/{{this._id}}" class="btn btn-primary">ADD TO CART</a>!-->
+                <button onclick="addToCart('{{this._id}}')" class="addtoCart__button btn btn-primary">ADD TO CART</button>
+            </div>
+              
+       
+           
+            
+        </div>
+         {{/each}}
+         </div>
+          
+    </div>
+    
+  
+</section>
+
+<section>
+  <footer class="bg-secondary" style="height: 15rem;">
+    <div class="container grid">
+      <div class="row">
+        <div class="image__logofooter" style="padding-top: 5rem; width:10% margin-left:2rem;">
+          <img style=" height: 4rem;" src="https://previews.dropbox.com/p/thumb/ABSqL38v4Y1xCM4UOO7B0d9s_tpcfp35Wnv8cFFv5rXMQ3jUa4iamYwvhdIuyg7dnq-jWM8eNGSO48lDLMo9i4pTgnumBgxHYXhSY0u2gJYcsXac9AaeJ0JqwymfAYTbYXwYmUD0grLvqxCYzQC2Ryu4KQa2mxMGKioNiXg3d8Odn1T1DMDfOcJT61WTtrB_37GernSfp-kx3IKokdl54nFCKkbhF6jMS-7ImYlsDQS3b5DnZKIvIqKl6XAnkFeLMmDIVsDaMgqQdZ3m-y2x51fS7660qDpiKrxXOlqTZ4zh7fjkAH1aWjLEtyZj1TGnQEBuvLY8vEzmJJe1nQvE020HpDe7Z6WoCeQ_atsIOcrq5w/p.png?fv_content=true&size_mode=5" alt="" class="src">
+        </div>
+        <div class="footer__logo text-light" style="padding-top: 5rem; width:30%">
+          <h2 style="font-family: 'Zen Tokyo Zoo', cursive;">CRUDsho</h2>
+           <span>LET'S NJOY THE SHOPPING</span>
+        </div>
+        <div class="nav__footer">
+             <ul class="footer__link">
+                  <li>
+                      <a href="/cart" class="footer__link ">Cart</a>
+                  </li><br>
+                  <li>
+                    <a href="/orders" class="footer__link ">Orders</a>
+                </li><br>
+                <li>
+                    <a href="/" class="footer__link ">Products</a>
+                </li>
+              </ul>
+        </div>
+        <div class="social__media" style="margin-left: 15rem; padding-top:7rem">
+            <a href="https://www.facebook.com/arshu.narampady" target="_blank" class="footer__social" >
+                      <i class="uil uil-facebook-f"></i>
+
+                  </a>
+
+                  <a href="https://twitter.com/arshu_rshad" target="_blank"  class="footer__social">
+                    <i class="uil uil-twitter-alt"></i>
+                </a>
+
+                <a href="https://www.snapchat.com/add/arshu_rshad" target="_blank" class="footer__social">
+                    <i class="uil uil-snapchat-alt"></i>
+                </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="copyrights" style="margin-left: 25rem; padding-top:2rem">
+             <p class="footer__copy">&#169; Rshuscode. All rights reserved</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+ 

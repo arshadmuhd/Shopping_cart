@@ -1,0 +1,189 @@
+
+<section class="placeorder__section container">
+    <div class="placeOrder__form pt-5">
+        <form action="" id="checkout-form">
+          <div class=" row">
+              <div class="col-md-6">
+                  <div class="placeorder__heading">
+                      <h3>Add your address</h3>
+                   </div>
+
+        
+             <div class=" my-1 pt-5">
+                    <label class="mr-sm-2" for="inlineFormCustomSelect">Country/Region</label>
+                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                            <option selected>Choose...</option>
+                            <option value="1">INDIA</option>
+                            <option value="2">UAE</option>
+                            <option value="4">USA</option>
+                            <option value="5">CANADA</option>
+                            <option value="6">NEWZEALAND</option>
+                            <option value="7">SPAIN</option>
+                            <option value="8">GERMANY</option>
+                            <option value="9">QATAR</option>
+                            <option value="10">SOUTH AFRICA</option>
+                    </select>
+                </div>
+                <div class="form-row pt-1"> 
+                      <input type="text" name="userId" id="" value="{{user._id}}" hidden>
+                     <label for="formGroupExampleInput">First Name</label>
+                      <input type="text" class="form-control" id="formGroupFnameInput" name="Fname" placeholder="Enter First Name">
+                   
+                 </div> 
+                      <div class="form-row pt-1"> 
+                           <label for="formGroupExampleInput">Last Name</label>
+                           <input type="text" class="form-control" id="formGroupLnameInput"  name="Lname" placeholder="Enter Last Name">
+                      </div>
+                 <div class="form-row pt-1"> 
+                     <label for="inputEmail4">Email</label>
+                     <input type="email" class="form-control" id="inputEmail4"  name="Email" placeholder="Enter your Email">
+                </div>
+                <div class="form-row pt-1"> 
+                           <label for="formGroupExampleInput pt-1">Contact Number</label>
+                           <input type="text" class="form-control" id="formGroupLnameInput"  name="Mobile" placeholder="Enter Contact Number">
+                </div>
+                <div class="form-group pt-1">
+                    <label for="inputAddress">Address</label>
+                    <input type="text" class="form-control" id="inputAddress"  name="Address" placeholder="1234 Main St">
+                </div>
+               <div class="form-group pt-1">
+                    <label for="inputAddress2">Landmark</label>
+                    <input type="text" class="form-control" id="inputAddress2"  name="Landmark" placeholder="near Hospital,Busstop,School etc">
+               </div>
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                       <label for="inputCity">City</label>
+                       <input type="text" class="form-control"  name="City" id="inputCity">
+                  </div>
+                 <div class="form-group col-md-4">
+                      <label for="inputState">Pincode</label>
+                       <input type="text" class="form-control"  name="Pincode" id="inputpin">
+                 </div>
+                <div class="form-group col-md-2">
+                   <label for="inputZip">Zip</label>
+                   <input type="text" class="form-control"  name="Zip" id="inputZip">
+                </div>
+               
+              </div>
+         
+                <div class="form-group">
+                    <div class="form-check">
+                       <input class="form-check-input" type="checkbox" id="gridCheck">
+                       <label class="form-check-label" for="gridCheck">
+                         Checked the details
+                       </label>
+                    </div>
+                 </div>
+                </div>
+        
+               <div class="payment__section col-md-4  " style="border-style: groove; border-height:5rem;">  <!-- style="border-style: groove; border-height:5rem;"!-->
+                   <div class="paymentSection__heading pt-2">
+                         <h5><b>Total Amount : ${{total}}</b></h5>
+                   </div>
+                   <hr>
+                   <div class="paymentgateway__heading">
+                        <h5>Payment Method</h5>
+                   </div>
+                  <div class="paymentgateway__option">
+                       <div class="form-check pt-3">
+                           <input class="form-check-input" type="radio" name="payment-method" id="exampleRadios1" value="COD" checked>
+                           <label class="form-check-label" for="exampleRadios1">
+                              Cash On Delivery
+                           </label>
+                           
+                      </div>
+                      <div class="form-check pt-3">
+                            <input class="form-check-input" type="radio" name="payment-method" id="exampleRadios2" value="ONLINE">
+                            <label class="form-check-label" for="exampleRadios2">
+                            Online Payment
+                            </label>
+                      </div>
+                      <div class="payment__btn pt-4">
+                        <button type="submit" class="btn btn-primary float-right">Check Out</button>
+                    </div>
+                   </div>
+
+                </div>
+            
+   
+   
+    </div>
+    </div>
+    </form>
+    </div>
+
+    
+</section>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+     $("#checkout-form").submit((e)=>{
+          e.preventDefault()
+          $.ajax({
+               url:'/place-order',
+               method:'post',
+               data:$('#checkout-form').serialize(),
+               success:(response)=>{
+                    
+                    if(response.codSuccess){
+                         location.href='/order-success'
+                    }else{
+                       razorpayPayment(response)
+                    }
+               }
+          })
+     })
+
+
+     function razorpayPayment(order){
+          var options = {
+    "key": "rzp_test_EQAqkdQ8o8dgeS", // Enter the Key ID generated from the Dashboard
+    "amount": order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "CRUDsho",
+    "description": "Test Transaction",
+    "image": "https://previews.dropbox.com/p/thumb/ABTmVSKW3fVanDrzOIoyNLcF_e6cROoCIMWQQwv6bDK3CG8s6R-3FM1A5jDErNPMSULiMVD4yqXLvKg5iL4K3Tnw-yCmtO0flsj_756KhqEMoIMimuG2dXTku_Hvcf49QXzzzAKHAsqRYryZJulqpdmRUqX3AERb2iOu59tvj1CZu7smMmGEaL0KCUG-PUA8OLnJzSYu4QZ1v5lDHbYCTJvHx-crJrZ2wTG-Ko_DXoV4cdLpmYh8D6k8L3j2wVDiD0URBYs3Lm19uXnb6-AXjxpPRJXQgQkmR1jJhpJINNCkIa-3gXK6a5NNfkeWDsOJc2JadmXyzKTdKT92bw2pJupLfr28nRPyzu2hdf1mEv6yfg/p.jpeg?fv_content=true&size_mode=5",
+    "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "handler": function (response){
+        
+        verifyPayment(response,order)
+    },
+    "prefill": {
+        "name": "full name",
+        "email": "email@example.com",
+        "contact": "987690****"
+    },
+    "notes": {
+        "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+        "color": "#3399cc"
+    }
+};
+var rzp1 = new Razorpay(options);
+ rzp1.open();
+
+
+     }
+     function verifyPayment(payment,order){
+          $.ajax({
+               url:'/verify-payment',
+               data:{
+                    payment,
+                    order
+               },
+               method:'post',
+               success:(response)=>{
+                    if(response.status){
+                          location.href='/order-success'
+                    }else{
+                         alert('payment Failed')
+                    }
+               }
+          })
+     }
+
+
+
+
+</script>

@@ -1,0 +1,80 @@
+<style>
+      hr {
+         width: 67rem;
+        height: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+
+<section class="section-cart ">
+
+    <div class="body-cart" >
+        <div class="container main-body bg-light pt-3 " style="border-style: dotted;">
+            <div class="row mt-2">
+                <h3 class="ml-5">Order List</h3><img style=" height: 2rem;" src="https://previews.dropbox.com/p/thumb/ABSvz4WHvT6u6MXISMbUIT6lnRf2ofldB5IlzNLLahLeMQupKF5KuLKw6ZRIGxR5ZCIK17gjpKdk9LBWoBm-_OBQC4AembFx_adlhweu071zu068N6ch0q9mZSJHNbmD7XOQg3vbQA0-tBVG5VzkQxjC5ztIhw00olvE_lNRlZCaLpQTXB0bU-vd01lkfCAg7-rje_WhGhV-jCmBQS2X4TKtEZntzyriGqSU7ey3dX4aUgL_5GmJPaz5ZQ7v7uNxqZQkVJ812hAzAch9PsDFPvQXIqodWjx2-zqpcOBu84geOqxnS7tkfBVU8x_4Zk3ISVHa0FpGz_EwjucRaLZB-opfxXMXcikF7X6cMevk8Ij1QQ/p.png?fv_content=true&size_mode=5" alt="" class="src" onmouseover="Cart">
+                <h5 class="ml-auto pt-2">Price</h5>
+            </div>
+            <hr />
+            
+            {{#each products}}
+            <div class="row cartItems_section">
+              
+                <div class="img_section" style="margin-left: 5rem;" >
+                   <img class="cartOrder-img  mr-2 pt-1" src="/product-images/{{this.product._id}}.jpg "  style="      height: 8rem; width: 8rem; "  alt="">
+                
+                </div>
+                 
+
+                <div class="description_section " style="margin-left: 7rem;">
+                     <div class="item_name  mr-auto">
+                        
+                      <h4 >{{this.product.Name}}</h4>
+                        <span class="text-right">{{this.product.Category}}</span><br>
+                       
+                        <img src="https://previews.dropbox.com/p/thumb/ABQ4vlkKHhCQZpIVmk2foi0I5xkBFSW3VqSU3xkQAmasNjqGqWbEGPU7zGXjrGIyK4_yhnOHEo7gJpkbiwBdpmlnyHTW_Fgu6FeDdGRLcc8j6KFVap5vnMbV5LpR7u4sJpK5QVLnYtJAl67gIHzYkSgfzK8YS9PvLp_XZC-xOe8BMDvuyTEm_4j2ImoYiyMry_uc-Vf2SBEpNSqxT9OEAWRcZ75GZYVahbS0jPXt8W1g5btwUnGPZECExQ1LIS3pAbI2K3JuUT-HCO3-hiBA374RGk1mDZe5-0FmkP-kxjog-oRI4dNr7OGPH1vdw806JHFvisntcn5NPHnQzaxDJpVOHeTGni2BVBS2KiX-8t3tow/p.png?fv_content=true&size_mode=5" alt="" style="" ><br>
+                        
+                        <div class="qty_section">
+                            <span>
+                                Qantity:<span id="{{this.product._id}}">{{this.quantity}}</span>
+                                
+                            </span><br>
+                            <span>
+                                Status : <span>Get you soon..</span>
+                                
+                            </span>
+                            
+                          
+                        </div>
+                        
+                    </div>
+
+                </div>
+               
+                <div class="price_section ml-auto ">
+                     
+                    <div class="item_price ">
+                       
+
+                        <h4 class="text-center pb-0" >${{this.product.Price}}</h4>
+                         
+                    </div>
+                   
+
+
+                </div>
+
+            
+           
+            </div>
+             <hr />
+            {{/each}}
+
+        </div>
+       
+
+    </div>
+
+    
+    
+</section>

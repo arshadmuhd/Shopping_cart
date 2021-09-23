@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-6 m-auto">
+        <div class="container mt-5">
+            <a class="login-brand ml-auto" href="#"><img style=" height: 8rem; margin-left: 5rem;" src="https://previews.dropbox.com/p/thumb/ABSn9mhjorcVNTzi0I3Wi1xj23DSm_X4w3d5S28An8YwIHPi5eExV4kOVg_LDeSBDvjTMQoNJGUVn-YAHfaAbY6woqZovDATAtd-zgPqVgdTxU52r8OjpueFdn4kdAmKWvsS67SAqoegFF8N6XXlAlmmCSV5io_E6zQx2jxLwCy0Gkqx3iY_HaLTSANcbf7xGEjZ59smFxJBhpd2YMTj4Ooko14L14UlsDKixp8_uT_oHxgezqHXV6ZEICia1b210mP4z0SDpWSOtO4_HlwrCoaBdjhm_GBUp_3Mbyq66TcGCyLj6fUXJI3BVCv92-fuY9T0F6WJ-DanKSHTQ9pMSwoo/p.png?size=256x256&size_mode=2" alt="" class="src"></a><br>
+
+            <h5 class="ml-5 p-2"><i><b>LOGIN PAGE</i></b></h5>
+            <form action="/login" method="POST">
+            {{#if loginErr}}
+               <p class="error bg-danger text-center" style="color: whitesmoke;" >Invalid username or password...!</p>
+            {{/if}}
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" name="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" name="Password" class="form-control" id="exampleInputPassword1">
+  </div>
+  
+  <button type="submit" class="btn btn-primary " style="margin-left: 14rem;  width: 11rem;" >LOGIN</button><br><br>
+  <a href="/signup">Create a new Account?</a>
+</form>
+        </div> 
+    </div>
+</div>
