@@ -19,7 +19,10 @@ CRUD.sho is an E-commerce website that developed by using HTML,CSS JAVASCRIPT as
 *cart
 *payment
 
+## Screenshots and snaps
 
+*Home
+![alt text](https://media-exp1.licdn.com/dms/image/C4D22AQFMwefMIKxjng/feedshare-shrink_800/0/1632666468518?e=1646870400&v=beta&t=uxFEZkfj4Z4TNqF08P3RQYAl5zGOIc49k4wNsC4U-Ww)
 
 ## Authors
 
