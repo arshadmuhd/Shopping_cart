@@ -3,13 +3,12 @@ E-commerce Website
 # Project Title
 CRUD.sho
 
-Simple overview of use/purpose.
+ONLINE SHOPPING CART
 
 ## Description
 
-CRUD.sho is an E-commerce website that developed by using HTML,CSS JAVASCRIPT as a frontend and backend by Node.js. MongoDB used for database.In this project So many products are added for shopping.User can create account and add to cart.In this project online payment method(Razorpay) also included. 
+CRUD.sho is an E-commerce website that developed by using HTML,CSS JAVASCRIPT as a frontend and backend by Node.js. MongoDB used for database.In this project So many products are added for shopping.User can create account and add to cart the products.In this project online payment method(Razorpay) also included. 
 
-## Getting Started
 
 ### Modules
 
